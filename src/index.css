@@ -1,13 +1,153 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import "font-awesome";
+
+body{
+  background-color: #fff;
+  font-family: "Prata", serif !important;
+  color: #333333;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+button, a{
+  cursor: pointer !important;
+}
+sup {
+  top: -0.5cm !important;
+}
+.spacer{
+  margin-top: 15%;
+}
+.logo{
+  width: 80px;
+  border-radius: 50%;
+}
+/* NavLinks */
+.nav-link{
+
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  
+}
+.nav-link:hover{
+ color: #c1a35f!important;
+}
+.nav-links-container:active:first-child{
+  color: #c1a35f!important;
+}
+/* carousel */
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  background-color: #c1a35f;
+ 
+}
+.carousel-room a {
+  background-color: transparent !important;
+}
+.carousel-item-custom::before{ 
+    content:'';
+    background-color: rgba(0, 0, 0, 0.7);
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+}
+.carousel-indicators  button{
+ width: 20px !important;
+ height: 20px !important;
+ border-radius: 50%;
+ background-color: transparent!important;
+ border:2px solid #c1a35f!important;
+}
+/* Gallery */
+.image-links{
+cursor: pointer;
+}
+.image-hover:hover{
+  min-height: 300px !important;
+}
+/* Form style */
+.form-control, .form-select{
+  border-radius: 0% !important;
+  padding: 2% !important;
+}
+/* Typography */
+.decoro{
+  color: #c1a35f!important;
+  font-weight: 800;
+}
+.titolo{
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.about-text{
+  line-height: 1.8rem;
+  font-size: 17px;
+}
+.tangerine, .decoro{
+  font-family: "Tangerine" !important;
+  font-size: 2rem;
+  
+}
+.counter{
+font-size: 3rem;
+font-weight: 800;
+}
+/* Media query big screens*/
+@media(min-width: 1200px){
+  /* Media Carousel */
+  .carousel-control-prev-icon, .carousel-control-next-icon{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .carousel-caption{
+    margin-bottom: 200px;
+  }
+  /* Media Typography */
+  .decoro{
+    font-size: 5.5rem !important;
+  }
+  .titolo{
+    font-size: 3.5rem !important;
+  }
+  .decoro-small{
+    font-size: 4rem !important;
+  }
+  .titolo-small{
+    font-size: 2.5rem !important;
+  }
+  .testo{
+    font-size: 2rem;
+   }
+}
+/* spoon decoration */
+.spoon-line{
+ width: 80px;
+ height: 2px;
+ background-color: #c1a35f;
+ margin-top: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Media query small screens */
+@media(max-width: 1199px){
+  .carousel-caption{
+    margin-bottom: 100px;
+  }
+  .decoro{
+    font-size: 3.5rem !important;
+  }
+  .titolo{
+    font-size: 2.5rem !important;
+  }
+  .decoro-small{
+    font-size: 3.1rem !important;
+  }
+  .titolo-small{
+    font-size: 2rem !important;
+  }
+  .testo{
+    font-size: 1.5rem;
+   }
 }
