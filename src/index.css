@@ -10,6 +10,12 @@ body{
   font-size: 15px;
   overflow-x: hidden;
 }
+li{
+  list-style: none;
+}
+ul{
+  padding: 0 !important;
+}
 button, a{
   cursor: pointer !important;
 }
@@ -121,13 +127,14 @@ font-weight: 800;
   .testo{
     font-size: 2rem;
    }
+  
 }
 /* spoon decoration */
 .spoon-line{
  width: 80px;
  height: 2px;
  background-color: #c1a35f;
- margin-top: 16px;
+ margin: 20px 0;
 }
 
 /* Media query small screens */
@@ -150,4 +157,20 @@ font-weight: 800;
   .testo{
     font-size: 1.5rem;
    }
+  
+}
+
+/* testimonials */
+.testimonials-height{
+  height: 800px;
+}
+@media(max-width: 600px){
+  .testimonials-height{
+    height: 1000px;
+  }
+}
+@media(max-width: 400px){
+  .testimonials-height{
+    height: 1150px;
+  }
 }

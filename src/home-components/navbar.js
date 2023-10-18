@@ -57,12 +57,13 @@ export default function Navigation() {
          
           <Offcanvas.Body>
             <Nav activeKey="/home" className="justify-content-end flex-grow-1 pe-3 nav-links-container">
-              <Nav.Link className="nav-link" href="/Home">Home</Nav.Link>
-              <Nav.Link className="nav-link" href="/About">About</Nav.Link>
-              <Nav.Link className="nav-link" href="/Prenota">Prenota</Nav.Link>
-              <Nav.Link className="nav-link" href="/Galleria">Galleria</Nav.Link>
-              <Nav.Link className="nav-link" href="/Camere">Camere</Nav.Link>
-              <Nav.Link className="nav-link" href="Contatto">Contatto</Nav.Link>
+              <Nav.Link className="nav-link" href="\">Home</Nav.Link>
+              <Nav.Link className="nav-link" href="#about">About</Nav.Link>
+              <Nav.Link className="nav-link" href="#prenota">Prenota</Nav.Link>
+              <Nav.Link className="nav-link" href="#galleria">Galleria</Nav.Link>
+              <Nav.Link className="nav-link" href="#camere">Camere</Nav.Link>
+              <Nav.Link className="nav-link" href="#prezzi">Prezzi</Nav.Link>
+              <Nav.Link className="nav-link" href="#contatto">Contatto</Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

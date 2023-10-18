@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   import { faSpoon } from '@fortawesome/free-solid-svg-icons'
 
-export default function About() {
+export default function About({id}) {
   return (
-    <Container>
+    <Container id={id}>
       <div className='text-center mb-5'>
 
       <span className='decoro-small decoro'>Scopri</span>

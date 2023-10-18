@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import StyledButton from "./components/ButtonRio";
+import StyledButton from "../components/ButtonRio";
 import * as formik from "formik";
 import * as yup from "yup";
 import styled from "styled-components";
@@ -14,8 +14,7 @@ const StyledContainer = styled(Container)`
   text-align: center;
 `;
 
-
-export default function RioForm() {
+export default function BookingsForm({ id }) {
   const { Formik } = formik;
 
   const schema = yup.object().shape({
@@ -41,20 +40,21 @@ export default function RioForm() {
         }}
       >
         {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <Form>
+          <Form id={id}>
             <div className="mb-5">
-            <span className="decoro-small decoro">Effetua</span>
-            <h2 className="titolo-small titolo">Una Prenotazione</h2>
-            <div className="d-flex justify-content-center">
-              <div className="spoon-line"></div>{" "}
-              <FontAwesomeIcon
-                className="spoon"
-                icon={faSpoon}
-                color="#c1a35f"
-                size="2x"
-              />{" "}
-              <div className="spoon-line"></div>
-            </div>
+              <span className="decoro-small decoro">Effetua</span>
+              <h2 className="titolo-small titolo">Una Prenotazione</h2>
+              <div className="d-flex justify-content-center">
+                <div className="spoon-line"></div>{" "}
+                <FontAwesomeIcon
+                  className="spoon"
+                  icon={faSpoon}
+                  color="#c1a35f"
+                  size="2x"
+                />{" "}
+                <div className="spoon-line"></div>
+              </div>
+              <p className="w-50 m-auto">Grazie per aver scelto agriturismo Rioxoris. La preghiamo di compilare la tabella sottostante per prenotazioni. Dopo la sua prenotazione, La ricontatteremo al piu presto per una conferma.</p>
             </div>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Row>

@@ -3,36 +3,32 @@ import { styled } from "styled-components";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpoon } from "@fortawesome/free-solid-svg-icons";
-import StyledButton from "./components/ButtonRio";
-import {NavLink} from "react-bootstrap";
-
+import StyledButton from "../components/ButtonRio";
+import { NavLink } from "react-bootstrap";
+import { images } from "../data/imagesgallery";
 
 const StyledOverlay = styled.div`
-position:relative;
-&:hover{
-  &:before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 95%;
-  width:100%;
- 
-  background-image: url("./Images/plus.png");
-  background-position:center;
-  background-repeat: no-repeat;
-  background-size: 20%;
+  position: relative;
+  &:hover {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
 
-}
-}
- 
+      background-color: rgba(0, 0, 0, 0.8);
+      height: 95%;
+      width: 100%;
+
+      background-image: url("./Images/plus.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 20%;
+    }
+  }
 `;
 
-
-export default function Gallery({ images }) {
-  
+export default function Gallery({ id }) {
   const shuffledArray = images.sort((a, b) => 0.5 - Math.random());
 
   const [filter, setFilter] = useState("agriturismo");
@@ -63,16 +59,19 @@ export default function Gallery({ images }) {
             if (imageIndex < filteredImages.length) {
               return (
                 <Col key={colIndex} md={4}>
-                <StyledOverlay>
-                  <NavLink className="image-links" href={filteredImages[imageIndex]}>
-                  <Image
-                    className="mb-3 image-hover"
-                    src={filteredImages[imageIndex]}
-                    fluid
-                    alt="Rioxoris Gallery"
-                  />
-                  </NavLink>
-              </StyledOverlay>
+                  <StyledOverlay>
+                    <NavLink
+                      className="image-links"
+                      href={filteredImages[imageIndex]}
+                    >
+                      <Image
+                        className="mb-3 image-hover"
+                        src={filteredImages[imageIndex]}
+                        fluid
+                        alt="Rioxoris Gallery"
+                      />
+                    </NavLink>
+                  </StyledOverlay>
                 </Col>
               );
             } else {
@@ -84,7 +83,7 @@ export default function Gallery({ images }) {
     );
   };
   return (
-    <Container>
+    <Container id={id}>
       <div className="mb-5 text-center">
         <span className="decoro-small decoro">Scopri</span>
         <h2 className="titolo-small titolo">La Nostra Galleria</h2>
@@ -140,9 +139,9 @@ export default function Gallery({ images }) {
           hcolor={"#fff"}
           size={"10px 30px"}
         />
-       
-        <StyledButton 
-          onclick={() => handleFilter("agriturismo")}        
+
+        <StyledButton
+          onclick={() => handleFilter("agriturismo")}
           text="Agriturismo"
           color={"black"}
           bcolor={"#ccc"}
@@ -152,7 +151,7 @@ export default function Gallery({ images }) {
           size={"10px 30px"}
         />
       </div>
-     
+
       {renderImages()}
     </Container>
   );
