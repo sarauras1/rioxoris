@@ -48,14 +48,14 @@ export default function Button({ text, color, bcolor, brcolor, hcolor, hbcolor, 
   return (
     <>
       <StyledButton
-      onClick={onclick}
-      $bcolor={bcolor}
-      $color={color}
-      $brcolor={brcolor}
-      $hcolor={hcolor}
-      $hbcolor={hbcolor}
-      $hbrnone={hbrnone}
-      $size={size}
+        onClick={onclick}
+        $bcolor={bcolor}
+        $color={color}
+        $brcolor={brcolor}
+        $hcolor={hcolor}
+        $hbcolor={hbcolor}
+        $hbrnone={hbrnone}
+        $size={size}
       >{text}</StyledButton>
     </>
   );

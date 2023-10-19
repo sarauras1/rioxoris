@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-@import "font-awesome";
+
 
 body{
   background-color: #fff;
@@ -18,6 +18,10 @@ ul{
 }
 button, a{
   cursor: pointer !important;
+}
+p{
+  line-height: 2rem;
+  font-size: 18px;
 }
 sup {
   top: -0.5cm !important;
@@ -68,12 +72,11 @@ sup {
  border:2px solid #c1a35f!important;
 }
 /* Gallery */
-.image-links{
-cursor: pointer;
-}
+
 .image-hover:hover{
   min-height: 300px !important;
 }
+
 /* Form style */
 .form-control, .form-select{
   border-radius: 0% !important;
@@ -162,7 +165,7 @@ font-weight: 800;
 
 /* testimonials */
 .testimonials-height{
-  height: 800px;
+  min-height: 900px;
 }
 @media(max-width: 600px){
   .testimonials-height{
@@ -174,3 +177,12 @@ font-weight: 800;
     height: 1150px;
   }
 }
+/* contatto form */
+
+.contatto{
+  color:#c1a35f;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+}
+

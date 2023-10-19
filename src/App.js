@@ -35,6 +35,7 @@ export default function App() {
               <Rooms id="camere" />
               <div className="spacer"></div>
               <Contatto id="contatto" />
+              <div className="spacer"></div>
               <Map />
             </>
           }

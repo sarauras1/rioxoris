@@ -6,7 +6,6 @@ import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
-  faLocation,
   faMapMarker,
   faPhone,
   faSpoon,
@@ -18,6 +17,8 @@ export default function ContactForm({ id }) {
   const schema = yup.object().shape({
     nome: yup.string().required("devi inserire il tuo nome e cognome"),
     email: yup.string().required("inserisci il tuo contatto email"),
+    subject: yup.string().required("inserisci il  soggetto del messaggio"),
+    textarea: yup.string().required("inserisci il tuo messaggio"),
   });
   return (
     <Container>
@@ -28,6 +29,7 @@ export default function ContactForm({ id }) {
           nome: "",
           email: "",
           subject: "",
+          textarea: "",
         }}
       >
         {({ handleSubmit, handleChange, values, touched, errors }) => (
@@ -47,7 +49,7 @@ export default function ContactForm({ id }) {
               </div>
             </div>
             <Row>
-              <Col md={6}>
+              <Col lg={6}>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
@@ -93,37 +95,43 @@ export default function ContactForm({ id }) {
                     <Form.Control
                       as="textarea"
                       type="text"
-                      name="text-area"
+                      value={values.textarea}
+                      onChange={handleChange}
+                      name="textarea"
                       rows={3}
                       className="p-5"
                     />
                   </Form.Group>
+                  <div className="d-flex justify-content-end">
+                  <StyledButton
+                    onClick={handleSubmit}
+                    type="submit"
+                    text="invia messaggio"
+                    color={"black"}
+                    brcolor={"black"}
+                    bcolor={"#fff"}
+                    hbcolor={"black"}
+                    hcolor={"#fff"}
+                    size={"15px 35px"}
+                  />
+                  </div>
+                 
                 </Form.Group>
-                <StyledButton
-                  onClick={handleSubmit}
-                  type="submit"
-                  text="invia messaggio"
-                  bcolor={"#fff"}
-                  color={"black"}
-                  brcolor={"black"}
-                  size={"15px 35px"}
-                />
               </Col>
-              <Col md={6}>
+              <Col lg={6}>
                 <div className="p-2 m-5">
-                  <span>CONTATTO</span>
+                  <span className="contatto mb-4">CONTATTO</span>
                   <p className="w-100">
                     Grazie per aver scelto agriturismo Rixoris. Inviateci un
                     messaggio per qualsiasi dubbio riguardante i nostri servizi.
                     La ricontatteremo al più presto possibile. Se dopo 24 ore
-                    non ha ancora ricevuto risposta può anche chiamarci
-                    telefonicamente al numero elencato qui sotto. Normalmente
-                    rispondiamo più velocemente ai messaggi inviati tramite
-                    WhatsApp.
+                    non ha ancora ricevuto risposta, chiamate telefonicamente al
+                    numero elencato qui sotto. Normalmente rispondiamo più
+                    velocemente ai messaggi inviati tramite WhatsApp.
                   </p>
-                  <ul>
-                    <li>
-                      <span>
+                  <ul className="contatto-info">
+                    <li className="mb-2">
+                      <span className="me-2">
                         <FontAwesomeIcon
                           icon={faPhone}
                           color="black"
@@ -132,8 +140,8 @@ export default function ContactForm({ id }) {
                       </span>
                       +39 329 745 1720
                     </li>
-                    <li>
-                      <span>
+                    <li className="mb-2">
+                      <span className="me-2">
                         <FontAwesomeIcon
                           icon={faEnvelope}
                           color="black"
@@ -142,8 +150,8 @@ export default function ContactForm({ id }) {
                       </span>
                       martino@rioxoris.it
                     </li>
-                    <li>
-                      <span>
+                    <li className="mb-2">
+                      <span className="me-2">
                         <FontAwesomeIcon
                           icon={faMapMarker}
                           color="black"

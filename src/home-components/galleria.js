@@ -15,7 +15,7 @@ const StyledOverlay = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-
+      cursor: pointer;
       background-color: rgba(0, 0, 0, 0.8);
       height: 95%;
       width: 100%;
@@ -59,19 +59,23 @@ export default function Gallery({ id }) {
             if (imageIndex < filteredImages.length) {
               return (
                 <Col key={colIndex} md={4}>
-                  <StyledOverlay>
                     <NavLink
                       className="image-links"
                       href={filteredImages[imageIndex]}
                     >
+                  <StyledOverlay>
+                  
+                     
                       <Image
-                        className="mb-3 image-hover"
+                        className="mb-3 image-hover gallery-images"
                         src={filteredImages[imageIndex]}
                         fluid
-                        alt="Rioxoris Gallery"
+                        alt="Immagini dell' agriturismo Rioxoris: Pietanze - Animali - Ristorante - Natura"
                       />
-                    </NavLink>
+                     
+                     
                   </StyledOverlay>
+                    </NavLink>
                 </Col>
               );
             } else {

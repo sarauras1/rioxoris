@@ -30,20 +30,20 @@ export default function CarouselCamere({ id }) {
         </p>
       </div>
       <Row>
-        <Col md="6">
+        <Col lg="6">
           <Carousel className="carousel-room" indicators={false}>
             {camere.map((image, index) => (
               <Carousel.Item key={index} interval={500}>
                 <Image
                   fluid
                   src={image.camere}
-                  alt="Le camere dell agriturismo Rioxoris"
+                  alt="Le camere dell' agriturismo Rioxoris"
                 />
               </Carousel.Item>
             ))}
           </Carousel>
         </Col>
-        <Col md="6" className="mt-5">
+        <Col lg="6" className="mt-5">
         <Prezzi id="prezzi"/>
         </Col>
       </Row>
