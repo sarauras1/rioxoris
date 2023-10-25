@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col, FormLabel } from "react-bootstrap";
-import StyledButton from "../components/ButtonRio";
+import StyledButton from "../components/buttonRio";
 import * as formik from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -103,19 +103,18 @@ export default function ContactForm({ id }) {
                     />
                   </Form.Group>
                   <div className="d-flex justify-content-end">
-                  <StyledButton
-                    onClick={handleSubmit}
-                    type="submit"
-                    text="invia messaggio"
-                    color={"black"}
-                    brcolor={"black"}
-                    bcolor={"#fff"}
-                    hbcolor={"black"}
-                    hcolor={"#fff"}
-                    size={"15px 35px"}
-                  />
+                    <StyledButton
+                      onClick={handleSubmit}
+                      type="submit"
+                      text="invia messaggio"
+                      color={"black"}
+                      brcolor={"black"}
+                      bcolor={"#fff"}
+                      hbcolor={"black"}
+                      hcolor={"#fff"}
+                      size={"15px 35px"}
+                    />
                   </div>
-                 
                 </Form.Group>
               </Col>
               <Col lg={6}>

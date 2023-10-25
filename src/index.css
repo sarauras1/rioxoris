@@ -167,14 +167,19 @@ font-weight: 800;
 .testimonials-height{
   min-height: 900px;
 }
-@media(max-width: 600px){
+@media(max-width: 768px){
   .testimonials-height{
     height: 1000px;
   }
 }
-@media(max-width: 400px){
+@media(max-width: 600px){
   .testimonials-height{
     height: 1150px;
+  }
+}
+@media(max-width: 475px){
+  .testimonials-height{
+    height: 1350px;
   }
 }
 /* contatto form */
@@ -184,5 +189,13 @@ font-weight: 800;
   font-size: 1.2rem;
   text-transform: uppercase;
 
+}
+/* loader */
+.logo-loader{
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  border-radius: 50%;
+  margin-bottom: 30px;
 }
 

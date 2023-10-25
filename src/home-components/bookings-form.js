@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import StyledButton from "../components/ButtonRio";
+import StyledButton from "../components/buttonRio";
 import * as formik from "formik";
 import * as yup from "yup";
 import styled from "styled-components";
@@ -54,7 +54,11 @@ export default function BookingsForm({ id }) {
                 />{" "}
                 <div className="spoon-line"></div>
               </div>
-              <p className="w-50 m-auto">Grazie per aver scelto agriturismo Rioxoris. La preghiamo di compilare la tabella sottostante per prenotazioni. Dopo la sua prenotazione, La ricontatteremo al piu presto per una conferma.</p>
+              <p className="w-50 m-auto">
+                Grazie per aver scelto agriturismo Rioxoris. La preghiamo di
+                compilare la tabella sottostante per prenotazioni. Dopo la sua
+                prenotazione, La ricontatteremo al piu presto per una conferma.
+              </p>
             </div>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Row>

@@ -6,7 +6,7 @@
     {camere:'./Images/gallery/_DSC6040.jpg'},
     {camere:'./Images/gallery/_DSC6042.jpg'},
     {camere:'./Images/gallery/_DSC6044.jpg'},
-    {camere:'./Images/gallery/_DSC6046.jpgw'},
+    {camere:'./Images/gallery/_DSC6046.jpg'},
     {camere:'./Images/gallery/_DSC6048.jpg'},
     {camere:'./Images/gallery/_DSC6050.jpg'},
     {camere:'./Images/gallery/_DSC6051.jpg'},

@@ -37,7 +37,7 @@ export default function CarouselTestimonials() {
     <>
       <Carousel>
         <StyledContainer fluid className="testimonials-height"/>
-        <div className="mb-5 text-center w-100" style={{position:"absolute", top: "10%", color:"white"}}>
+        <div className="mb-5 text-center w-100" style={{position:"absolute", top: "10%", color:"white", padding:"0 20px"}}>
           <span className="decoro-small decoro">Testimonials</span>
           <h2 className="titolo-small titolo">Cosa dicono i nostri clienti</h2>
           <div className="d-flex justify-content-center">

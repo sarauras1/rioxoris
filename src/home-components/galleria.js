@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpoon } from "@fortawesome/free-solid-svg-icons";
-import StyledButton from "../components/ButtonRio";
+import StyledButton from "../components/buttonRio";
 import { NavLink } from "react-bootstrap";
 import { images } from "../data/imagesgallery";
 
@@ -59,23 +59,19 @@ export default function Gallery({ id }) {
             if (imageIndex < filteredImages.length) {
               return (
                 <Col key={colIndex} md={4}>
-                    <NavLink
-                      className="image-links"
-                      href={filteredImages[imageIndex]}
-                    >
-                  <StyledOverlay>
-                  
-                     
+                  <NavLink
+                    className="image-links"
+                    href={filteredImages[imageIndex]}
+                  >
+                    <StyledOverlay>
                       <Image
                         className="mb-3 image-hover gallery-images"
                         src={filteredImages[imageIndex]}
                         fluid
                         alt="Immagini dell' agriturismo Rioxoris: Pietanze - Animali - Ristorante - Natura"
                       />
-                     
-                     
-                  </StyledOverlay>
-                    </NavLink>
+                    </StyledOverlay>
+                  </NavLink>
                 </Col>
               );
             } else {
