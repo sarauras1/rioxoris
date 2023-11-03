@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 import { useState, useEffect } from "react";
-
+import { Outlet } from "react-router-dom";
 
 
 export default function Navigation() {
@@ -64,6 +64,7 @@ export default function Navigation() {
               <Nav.Link className="nav-link" href="#camere">Camere</Nav.Link>
               <Nav.Link className="nav-link" href="#prezzi">Prezzi</Nav.Link>
               <Nav.Link className="nav-link" href="#contatto">Contatto</Nav.Link>
+              <Outlet/>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

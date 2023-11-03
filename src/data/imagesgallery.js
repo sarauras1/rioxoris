@@ -151,4 +151,5 @@ export const images = [
   {camere:'./Images/gallery/_DSC6073.jpg'},
   {camere:'./Images/gallery/_DSC6078.jpg'},
   {camere:'./Images/gallery/_DSC6079.jpg'},
-]
+];
+

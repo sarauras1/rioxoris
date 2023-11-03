@@ -44,7 +44,7 @@ const StyledButton = styled.button((props) => ({
   
 
 
-export default function Button({ text, color, bcolor, brcolor, hcolor, hbcolor, hbrnone, size, onclick}) {
+export default function Button({ text, color, bcolor, brcolor, hcolor, hbcolor, hbrnone, size, onclick, type}) {
   return (
     <>
       <StyledButton
@@ -56,6 +56,7 @@ export default function Button({ text, color, bcolor, brcolor, hcolor, hbcolor, 
         $hbcolor={hbcolor}
         $hbrnone={hbrnone}
         $size={size}
+        type={type}
       >{text}</StyledButton>
     </>
   );
