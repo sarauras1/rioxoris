@@ -10,7 +10,7 @@ import Map from "./home-components/map";
 import RioFooter from "./home-components/footer";
 import Whatsapp from "./components/whatsapp";
 import ScrollToTop from "./components/scrollToTop";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Contatto from "./home-components/contact-form";
 import { useState, useEffect } from "react";
 import Loader from "./components/loader";
@@ -67,7 +67,7 @@ export default function App() {
             />
             <Route />
           </Routes>
-
+          
           <AdminLink />
           <AdminPage />
         </>

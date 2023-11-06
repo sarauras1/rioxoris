@@ -13,8 +13,6 @@ export default function Prezzi({ id }) {
     GetPrezzi();
   }, []);
  
-
- 
   return (
     <>
       <Container id={id}>
@@ -30,64 +28,47 @@ export default function Prezzi({ id }) {
           <tbody>
             <tr>
               <td>B&B</td>
-
-              {
-              data.length
-              ? data
-                  .filter((item) => item.id.includes("&"))
-                  .map((item) => {
-                    var prezzi = item.prezzi.data; console.log(prezzi)
-                    return prezzi.map(({stagione, prezzo}) => (
-                    <td key={stagione}>{prezzo}</td>
-                    ));
-                  })
-              : []
-              }
+              {data.length
+                ? data
+                    .filter((item) => item.id.includes("&"))
+                    .map((item) => item.prezzi).sort((a, b) => a.index - b.index)
+                    .map(({ stagione, prezzo }) => (
+                      <td key={stagione}>{prezzo}</td>
+                    ))
+                : []}
             </tr>
             <tr>
               <td>Mezza Pensione</td>
-              {
-              data.length
-              ? data
-                  .filter((item) => item.id.includes("mezza"))
-                  .map((item) => {
-                    var prezzi = item.prezzi.data;
-                    return prezzi.map(({stagione, prezzo}) => (
-                    <td key={stagione}>{prezzo}</td>
-                    ));
-                  })
-              : []
-              }
+              {data.length
+                ? data
+                    .filter((item) => item.id.includes("mezza"))
+                    .map((item) => item.prezzi).sort((a, b) => a.index - b.index)
+                    .map(({ stagione, prezzo }) => (
+                      <td key={stagione}>{prezzo}</td>
+                    ))
+                : []}
             </tr>
             <tr>
               <td>Pensione Completa</td>
-              {
-              data.length
-              ? data
-                  .filter((item) => item.id.includes("completa"))
-                  .map((item) => {
-                    var prezzi = item.prezzi.data;
-                    return prezzi.map(({stagione, prezzo}) => (
-                    <td key={stagione}>{prezzo}</td>
-                    ));
-                  })
-              : []
-              }
+              {data.length
+                ? data
+                    .filter((item) => item.id.includes("completa"))
+                    .map((item) => item.prezzi).sort((x, y) => x.index - y.index)
+                    .map(({ stagione, prezzo }) => (
+                      <td key={stagione}>{prezzo}</td>
+                    ))
+                : []}
             </tr>
             <tr>
               <td>Bambini fino ai 24 mesi</td>
-              {
-              data.length
-              ? data
-                  .filter((item) => item.id.includes("24"))
-                  .map((item) => {
-                    var prezzi = item.prezzi.data;
-                    return prezzi.map(({stagione, prezzo}) => (
-                    <td key={stagione}>{prezzo}</td>
-                    ));
-                  })
-              : []
-              }
+              {data.length
+                ? data
+                    .filter((item) => item.id.includes("24"))
+                    .map((item) => item.prezzi).sort((a, b) => a.index - b.index)
+                    .map(({ stagione, prezzo }) => (
+                      <td key={stagione}>{prezzo}</td>
+                    ))
+                : []}
             </tr>
             <tr>
               <td>Bambini Fino agli 8 anni</td>

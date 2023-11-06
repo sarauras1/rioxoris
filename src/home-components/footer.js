@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
+import {Link } from "react-router-dom"
 import * as Icon from "react-bootstrap-icons";
 const StyledContainer = styled(Container)`
   background-color: #444;
@@ -32,8 +33,11 @@ export default function RioFooter() {
           <Icon.Instagram color="white" size="20" />
         </StyledMediaBackground>
       </StyledContainer>
-        
-     
+      <Container className="admin-container" fluid>
+      <Link className="admin-link" to="/login">
+          Admin
+        </Link>
+        </Container>
     </>
   );
 }

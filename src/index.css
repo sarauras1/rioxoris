@@ -201,8 +201,22 @@ font-weight: 800;
 /* Admin link */
 .admin-link{
   color: #fff;
+  margin-left: 10px;
+  font-size: 12px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
 }
 .admin-container{
-  background-color: #333333;
+  background-color: #555;
   text-align: center;
+}
+.error{
+  color: red;
+  font-size: 12px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 15px;
+}
+.alert-container{
+  width: 200px;
+  margin-top: 100px;
 }
