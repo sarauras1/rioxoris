@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import Button from "../components/buttonRio";
+import Button from "../components/button";
 import * as formik from "formik";
 import * as yup from "yup";
 import styled from "styled-components";

@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col, FormLabel } from "react-bootstrap";
-import StyledButton from "../components/buttonRio";
+import Button from "../components/button";
 import * as formik from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -103,7 +103,7 @@ export default function ContactForm({ id }) {
                     />
                   </Form.Group>
                   <div className="d-flex justify-content-end">
-                    <StyledButton
+                    <Button
                       onClick={handleSubmit}
                       type="submit"
                       text="invia messaggio"
