@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons";
+
 const StyledContainer = styled(Container)`
   background-color: #444;
   color: white;

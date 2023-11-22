@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col, FormLabel } from "react-bootstrap";
-import Button from "../components/button";
+import Button from "../components/buttonRio";
 import * as formik from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import StyledButton from "../components/buttonRio";
+import Button from "../components/buttonRio";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { signInAuth, authStateChanges } from "../utils/firebase";
@@ -16,7 +16,7 @@ export default function SignIn() {
     });
     return unsubscribe;
   }, []);
-    const schema = yup.object().shape({
+  const schema = yup.object().shape({
     email: yup.string().required("devi inserire il tuo nome e cognome"),
     password: yup.string().required("inserisci la tua password"),
   });
@@ -75,7 +75,7 @@ export default function SignIn() {
                     className="mb-3"
                   />
                 </Col>
-                <StyledButton
+                <Button
                   onClick={handleSubmit}
                   type="submit"
                   text="invia"
