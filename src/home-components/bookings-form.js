@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import StyledButton from "../components/buttonRio";
+import Button from "../components/buttonRio";
 import * as formik from "formik";
 import * as yup from "yup";
 import styled from "styled-components";
@@ -147,7 +147,7 @@ export default function BookingsForm({ id }) {
                 >
                   <Form.Control as="textarea" rows={3} className="p-5" />
                 </Form.Group>
-                <StyledButton
+                <Button
                   onClick={handleSubmit}
                   type="submit"
                   text="invia"

@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "rioxorislogo.png",
-      "type": "image/png",
+      "src": "logo.svg",
+      "type": "image/svg",
       "sizes": "192x192"
     },
     {
-       "src": "rioxorislogo.png",
-      "type": "image/png",
+       "src": "logo.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
