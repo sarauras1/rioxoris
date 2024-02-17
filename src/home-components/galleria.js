@@ -6,7 +6,8 @@ import { faSpoon } from "@fortawesome/free-solid-svg-icons";
 import StyledButton from "../components/buttonRio";
 import { NavLink } from "react-bootstrap";
 import { images } from "../data/imagesgallery";
-
+import {useWindowSize} from './windowSize';
+import GalleriaCarousel from "./galleriaCarousel";
 const StyledOverlay = styled.div`
   position: relative;
   &:hover {
@@ -29,6 +30,7 @@ const StyledOverlay = styled.div`
 `;
 
 export default function Gallery({ id }) {
+  const [width, height] = useWindowSize();
   const shuffledArray = images.sort((a, b) => 0.5 - Math.random());
 
   const [filter, setFilter] = useState("agriturismo");
@@ -36,19 +38,20 @@ export default function Gallery({ id }) {
   const handleFilter = (category) => {
     setFilter(category);
   };
+  let filteredImages = [];
+  if (filter === "all") {
+    filteredImages = shuffledArray;
+  } else {
+    filteredImages = images.filter(
+      (image) => Object.keys(image)[0] === filter
+    );
+  }
 
+  // Flatten the array of objects into an array of strings
+  filteredImages = filteredImages.map((image) => Object.values(image)[0]);
+ 
   const renderImages = () => {
-    let filteredImages = [];
-    if (filter === "all") {
-      filteredImages = shuffledArray;
-    } else {
-      filteredImages = images.filter(
-        (image) => Object.keys(image)[0] === filter
-      );
-    }
-
-    // Flatten the array of objects into an array of strings
-    filteredImages = filteredImages.map((image) => Object.values(image)[0]);
+   
 
     return Array.from(
       { length: Math.ceil(filteredImages.length / 2) },
@@ -80,7 +83,7 @@ export default function Gallery({ id }) {
           })}
         </Row>
       )
-    );
+    ); 
   };
   return (
     <Container id={id}>
@@ -152,7 +155,7 @@ export default function Gallery({ id }) {
         />
       </div>
 
-      {renderImages()}
+      { width > 700 ? renderImages() : <GalleriaCarousel Images={filteredImages}/>}
     </Container>
   );
 }
