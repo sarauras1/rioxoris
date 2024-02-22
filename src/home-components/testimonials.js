@@ -70,6 +70,7 @@ export default function CarouselTestimonials() {
                 top: "10%",
                 color: "white",
                 padding: "0 20px",
+                marginBottom: "30px"
               }}
             >
               <span className="decoro-small decoro">Testimonials</span>
@@ -88,8 +89,8 @@ export default function CarouselTestimonials() {
               </div>
             </div>
             <Carousel.Caption>
-              <p>{text}</p>
-              <p>{testimone}</p>
+              <p className="testimone-text">{text}</p>
+              <p className="testimone">{testimone}</p>
             </Carousel.Caption>
           </Carousel.Item>
         ))}

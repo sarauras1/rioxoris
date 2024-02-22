@@ -10,8 +10,13 @@ import { faSpoon } from "@fortawesome/free-solid-svg-icons";
 const StyledContainer = styled(Container)`
   background-color: #222;
   color: white;
-  padding: 100px;
   text-align: center;
+  @media(min-width: 768px){
+    padding: 100px;
+  }
+  @media(max-width: 767px){
+    padding: 50px;
+  }
 `;
 
 export default function BookingsForm({ id }) {
@@ -54,7 +59,7 @@ export default function BookingsForm({ id }) {
                 />{" "}
                 <div className="spoon-line"></div>
               </div>
-              <p className="w-50 m-auto">
+              <p className="m-auto">
                 Grazie per aver scelto agriturismo Rioxoris. La preghiamo di
                 compilare la tabella sottostante per prenotazioni. Dopo la sua
                 prenotazione, La ricontatteremo al piu presto per una conferma.

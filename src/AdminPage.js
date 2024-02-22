@@ -17,6 +17,7 @@ export default function Pages() {
    }, [])
   return (
     <>
+     
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route
@@ -24,6 +25,7 @@ export default function Pages() {
           element={<ProtectedRoute isLoggedIn={isLogged} />}
         />
       </Routes>
+    
     </>
   );
 }

@@ -30,7 +30,8 @@ export default function CarouselCamere({ id }) {
         </p>
       </div>
       <Row>
-        <Col lg="6" className="mb-5">
+       
+        <Col className="mb-5" md="6">
           <Carousel className="carousel-room" indicators={false}>
             {camere.map((image, index) => (
               <Carousel.Item key={index} interval={500}>
@@ -43,9 +44,10 @@ export default function CarouselCamere({ id }) {
             ))}
           </Carousel>
         </Col>
-        <Col lg="6">
-        <Prezzi id="prezzi"/>
+        <Col md="6">
+        <Prezzi id="prezzi" className="prezzi"/>
         </Col>
+       
       </Row>
     </Container>
   );

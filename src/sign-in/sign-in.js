@@ -1,5 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Button from "../components/buttonRio";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -50,7 +51,13 @@ export default function SignIn() {
         }}
       >
         {({ handleSubmit, handleChange, values, errors }) => (
+          
+          
           <Form onSubmit={handleSubmit}>
+            <div className="mt-5"></div>
+            <p>Pagina riservata all' amministrazione del sito</p>
+            <Link to="/">Torna al sito</Link>
+            <div className="mt-5"></div>
             <Row>
               <Form.Group className="mb-3">
                 <Col md={6}>
@@ -89,6 +96,7 @@ export default function SignIn() {
               </Form.Group>
             </Row>
           </Form>
+          
         )}
       </Formik>
     </Container>

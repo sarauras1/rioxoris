@@ -11,7 +11,7 @@ const StyledContainer = styled(Container)`
   background-repeat: no-repeat;
   background-size: cover;
   @media screen and (max-width: 769px){
-    height: 100vh;
+    height: 130vh;
     
   }
   height:500px;

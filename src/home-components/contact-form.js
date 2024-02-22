@@ -119,7 +119,8 @@ export default function ContactForm({ id }) {
               </Col>
               <Col lg={6}>
                 <div className="p-2 m-5">
-                  <span className="contatto mb-4">CONTATTO</span>
+                  <span className="contatto">CONTATTO</span>
+                  <div className="mb-3"></div>
                   <p className="w-100">
                     Grazie per aver scelto agriturismo Rixoris. Inviateci un
                     messaggio per qualsiasi dubbio riguardante i nostri servizi.

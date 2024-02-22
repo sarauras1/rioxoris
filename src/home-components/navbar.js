@@ -50,7 +50,7 @@ export default function Navigation() {
         >
           <Offcanvas.Header closeButton >
             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-            Agriturismo Rioxoris
+           
             </Offcanvas.Title>
            
           </Offcanvas.Header>

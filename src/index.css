@@ -9,6 +9,7 @@ body{
   color: #333333;
   font-size: 15px;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 li{
   list-style: none;
@@ -129,7 +130,7 @@ font-weight: 800;
   }
   .testo{
     font-size: 2rem;
-   }
+  }
   
 }
 /* spoon decoration */
@@ -140,7 +141,7 @@ font-weight: 800;
  margin: 20px 0;
 }
 
-/* Media query small screens */
+/* Media query medium/ tablets screens */
 @media(max-width: 1199px){
   .carousel-caption{
     margin-bottom: 100px;
@@ -163,24 +164,59 @@ font-weight: 800;
   
 }
 
+@media(max-width: 768px){
+ 
+  .decoro{
+    font-size: 2rem !important;
+  }
+  .titolo{
+    font-size: 1.8rem !important;
+  }
+  .decoro-small{
+    font-size: 2rem !important;
+  }
+  .titolo-small{
+    font-size: 1.5rem !important;
+  }
+  .testo{
+    font-size: 1rem;
+   }
+  
+}
+
+
 /* testimonials */
 .testimonials-height{
   min-height: 900px;
 }
 @media(max-width: 768px){
   .testimonials-height{
-    height: 1000px;
+    max-height: 850px;
+  }
+  .testimone-text{ 
+    font-size: 1rem;
+  }
+  .testimone{
+    font-style: italic;
   }
 }
-@media(max-width: 600px){
+@media(max-width: 638px){
   .testimonials-height{
-    height: 1150px;
+    min-height: 1100px;
   }
+  
 }
-@media(max-width: 475px){
+@media(max-width: 590px){
   .testimonials-height{
-    height: 1350px;
+    min-height: 1300px;
   }
+  
+}
+@media(max-width: 400px){
+  .testimonials-height{
+    min-height: 1400px;
+  }
+  
 }
 /* contatto form */
 
