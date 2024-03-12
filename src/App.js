@@ -19,6 +19,8 @@ import AdminLink from "./admin-link/admin-link";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
+
+  const [expanded, setExpanded] = useState(false);
   //   the useEffect will run on the first rendering of the App component
   //   after two seconds (about how long it takes for the data to load)
   //   the loaded state will become true
@@ -41,9 +43,8 @@ export default function App() {
               path="/"
               element={
                 <>
-                  <Navigation />
-                  <CarouselUno />
-
+                  <Navigation setExpanded={setExpanded} expanded={expanded}/>
+                  <CarouselUno expanded={expanded}/>
                   <div className="spacer"></div>
                   <About id="about" />
                   <div className="spacer"></div>

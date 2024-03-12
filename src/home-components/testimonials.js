@@ -2,7 +2,8 @@ import Carousel from "react-bootstrap/Carousel";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpoon } from "@fortawesome/free-solid-svg-icons";
+import { faSpoon, faStar } from "@fortawesome/free-solid-svg-icons";
+
 const image = "./Images/testimonial-bg.jpg";
 
 const StyledContainer = styled(Container)`
@@ -23,6 +24,7 @@ const StyledContainer = styled(Container)`
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
+
 export default function CarouselTestimonials() {
   const Recenzioni = [
     {
@@ -70,7 +72,7 @@ export default function CarouselTestimonials() {
                 top: "10%",
                 color: "white",
                 padding: "0 20px",
-                marginBottom: "30px"
+                marginBottom: "30px",
               }}
             >
               <span className="decoro-small decoro">Testimonials</span>
@@ -84,9 +86,14 @@ export default function CarouselTestimonials() {
                   icon={faSpoon}
                   color="#c1a35f"
                   size="2x"
-                />{" "}
+                />{" "}               
                 <div className="spoon-line"></div>
               </div>
+                <FontAwesomeIcon icon={faStar} color="#c1a35f" size="2x" />
+                <FontAwesomeIcon icon={faStar} color="#c1a35f" size="2x" />
+                <FontAwesomeIcon icon={faStar} color="#c1a35f" size="2x" />
+                <FontAwesomeIcon icon={faStar} color="#c1a35f" size="2x" />
+                <FontAwesomeIcon icon={faStar} color="#c1a35f" size="2x" />
             </div>
             <Carousel.Caption>
               <p className="testimone-text">{text}</p>

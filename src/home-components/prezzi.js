@@ -1,6 +1,13 @@
 import { Container, Table } from "react-bootstrap";
 import { getPrezziFromFirestore } from "../utils/firebase";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const StyledTable = styled(Table)`
+ @media(max-width: 400px){
+  max-width: 300px;
+ }
+`;
 
 export default function Prezzi({ id }) {
   const [data, setData] = useState([]);
@@ -16,7 +23,7 @@ export default function Prezzi({ id }) {
   return (
     <>
       <Container id={id}>
-        <Table>
+        <StyledTable>
           <thead>
             <tr>
               <th>--------------</th>
@@ -83,7 +90,7 @@ export default function Prezzi({ id }) {
               <td>Sconto 30%</td>
             </tr>
           </tbody>
-        </Table>
+        </StyledTable>
       </Container>
     </>
   );

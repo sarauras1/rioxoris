@@ -47,23 +47,24 @@ const images = [
 ];
 
 const Image = styled.img`
-  height: 50vw;
   width: 100%;
   margin: 0 auto;
-  @media screen and (max-width: 600px) {
-    height: 70vw;
-  }
-  @media screen and (max-width: 480px) {
-    height: 80vw;
-  }
-  @media screen and (max-width: 390px) {
-    height: 100vw;
+  @media(max-width: 555px){
+    height: 400px;
   }
 `;
 
-export default function Header() {
+export default function Header({ expanded }) {
+  console.log(!expanded, "car");
   return (
-    <Carousel slide={true} fade={true} interval={1000}>
+    <Carousel
+      slide={true}
+      fade={true}
+      interval={1000}
+      indicators={!expanded}
+      controls={!expanded}
+    
+    >
       {images.map((image, index) => (
         <Carousel.Item
           key={index}
@@ -71,14 +72,17 @@ export default function Header() {
           className="carousel-item-custom"
         >
           <Image className="d-block w-100" src={image.src} alt={image.alt} />
-
-          <Carousel.Caption className="mt-5">
-            <div>
-              <span className="decoro">{image.welcome}</span>
-              <h1 className="titolo">{image.title}</h1>
-              <h3 className="testo">{image.text}</h3>
-            </div>
-          </Carousel.Caption>
+          {!expanded && (
+            <Carousel.Caption
+              style={{top: "25%"}}
+            >
+              <div>
+                <span className="decoro">{image.welcome}</span>
+                <h1 className="titolo">{image.title}</h1>
+                <h3 className="testo">{image.text}</h3>
+              </div>
+            </Carousel.Caption>
+          )}
         </Carousel.Item>
       ))}
     </Carousel>
