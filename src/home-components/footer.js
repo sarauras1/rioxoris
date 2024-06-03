@@ -28,10 +28,14 @@ export default function RioFooter() {
     <>
       <StyledContainer fluid>
         <StyledMediaBackground>
-          <Icon.Facebook color="white" size="20" />
+          <Link to="https://www.facebook.com/agriturismorioxoris/">
+            <Icon.Facebook color="white" size="20" />
+          </Link>
         </StyledMediaBackground>
         <StyledMediaBackground>
-          <Icon.Instagram color="white" size="20" />
+          <Link to="https://www.instagram.com/agriturismo_rioxioris/">
+            <Icon.Instagram color="white" size="20" />
+          </Link>
         </StyledMediaBackground>
       </StyledContainer>
       <Container className="admin-container" fluid>

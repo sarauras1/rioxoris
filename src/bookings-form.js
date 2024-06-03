@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "../components/buttonRio";
-import { Formik } from "formik";
+import * as formik from "formik";
 import * as yup from "yup";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,15 +11,17 @@ const StyledContainer = styled(Container)`
   background-color: #222;
   color: white;
   text-align: center;
-  @media (min-width: 768px) {
+  @media(min-width: 768px){
     padding: 100px;
   }
-  @media (max-width: 767px) {
+  @media(max-width: 767px){
     padding: 50px;
   }
 `;
 
 export default function BookingsForm({ id }) {
+  const { Formik } = formik;
+
   const schema = yup.object().shape({
     nome: yup.string().required("devi inserire il tuo nome e cognome"),
     tel: yup.number().required("inserisci il tuo contatto telefonico"),
@@ -29,29 +31,11 @@ export default function BookingsForm({ id }) {
       .string()
       .required("seleziona il tipo di servizio da te richiesto"),
   });
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
   return (
     <StyledContainer fluid>
       <Formik
         validationSchema={schema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true)
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...values }),
-          })
-          .then(() => alert("Success!"), setSubmitting(false))
-          .catch((error) => alert(error));
-        }}
+        onSubmit={console.log}
         initialValues={{
           nome: "",
           tel: "",
@@ -60,7 +44,7 @@ export default function BookingsForm({ id }) {
           selected: "",
         }}
       >
-        {({ handleChange, values, errors }) => (
+        {({ handleSubmit, handleChange, values, touched, errors }) => (
           <Form id={id}>
             <div className="mb-5">
               <span className="decoro-small decoro">Effettua</span>
@@ -76,9 +60,8 @@ export default function BookingsForm({ id }) {
                 <div className="spoon-line"></div>
               </div>
               <p className="m-auto">
-                Grazie per aver scelto l' agriturismo Rioxoris. Per
-                prenotazioni, la preghiamo di compilare la tabella sottostante.
-                La ricontatteremo al più presto per confermare.
+                Grazie per aver scelto l' agriturismo Rioxoris. Per prenotazioni, la preghiamo di compilare la tabella sottostante. La ricontatteremo al più
+                presto per confermare. 
               </p>
             </div>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -169,6 +152,7 @@ export default function BookingsForm({ id }) {
                   <Form.Control as="textarea" rows={3} className="p-5" />
                 </Form.Group>
                 <Button
+                  onClick={handleSubmit}
                   type="submit"
                   text="invia"
                   bcolor={"#fff"}

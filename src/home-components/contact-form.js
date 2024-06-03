@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col, FormLabel } from "react-bootstrap";
 import Button from "../components/buttonRio";
-import * as formik from "formik";
+import { Formik } from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,19 +12,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactForm({ id }) {
-  const { Formik } = formik;
-
   const schema = yup.object().shape({
     nome: yup.string().required("devi inserire il tuo nome e cognome"),
     email: yup.string().required("inserisci il tuo contatto email"),
     subject: yup.string().required("inserisci il  soggetto del messaggio"),
     textarea: yup.string().required("inserisci il tuo messaggio"),
   });
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   return (
     <Container>
       <Formik
         validationSchema={schema}
-        onSubmit={console.log}
+        onSubmit={(values, { setSubmitting }) => {
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", values }),
+          })
+            .then(() => alert("Success!"), setSubmitting(false))
+            .catch((error) => alert(error), setSubmitting(false));
+          alert(values);
+        }}
         initialValues={{
           nome: "",
           email: "",
@@ -32,8 +48,8 @@ export default function ContactForm({ id }) {
           textarea: "",
         }}
       >
-        {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <Form id={id}>
+        {({ handleChange, values, errors }) => (
+          <Form id={id} method="post">
             <div className="mb-5 text-center">
               <span className="decoro-small decoro">Per Qualsiasi Dubbio</span>
               <h2 className="titolo-small titolo">Contattaci</h2>
@@ -104,7 +120,6 @@ export default function ContactForm({ id }) {
                   </Form.Group>
                   <div className="d-flex justify-content-end">
                     <Button
-                      onClick={handleSubmit}
                       type="submit"
                       text="invia messaggio"
                       color={"black"}
@@ -122,9 +137,12 @@ export default function ContactForm({ id }) {
                   <span className="contatto">CONTATTO</span>
                   <div className="mb-3"></div>
                   <p className="w-100">
-                  Grazie per aver scelto Agriturismo Rixoris! Se hai domande riguardanti i nostri servizi, inviaci un messaggio e ti 
-                  risponderemo al più presto. Se non ricevi una risposta entro 24 ore, puoi anche chiamarci al numero elencato di seguito. 
-                  Di solito rispondiamo più velocemente ai messaggi inviati via WhatsApp.
+                    Grazie per aver scelto Agriturismo Rixoris! Se hai domande
+                    riguardanti i nostri servizi, inviaci un messaggio e ti
+                    risponderemo al più presto. Se non ricevi una risposta entro
+                    24 ore, puoi anche chiamarci al numero elencato di seguito.
+                    Di solito rispondiamo più velocemente ai messaggi inviati
+                    via WhatsApp.
                   </p>
                   <ul className="contatto-info">
                     <li className="mb-2">

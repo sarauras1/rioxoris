@@ -21,20 +21,22 @@ const Bounce = styled.div`
   animation-fill-mode: both;
   padding: 2rem 1rem;
   font-size: 1.2rem;
-  width: 300px;
-  margin: 200px auto;
+  margin-top: 20%;
 `;
 
 export default function Loader() {
   return (
     <>
-      <Bounce>
+    <div className="w-100 d-flex justify-content-center">
+     <Bounce>
         <img
           className="logo-loader"
           src="./rioxiorislogo.png"
           alt="Rioxoris Logo"
         />
       </Bounce>
+    </div>
+     
     </>
   );
 }
