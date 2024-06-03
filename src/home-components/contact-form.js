@@ -122,12 +122,9 @@ export default function ContactForm({ id }) {
                   <span className="contatto">CONTATTO</span>
                   <div className="mb-3"></div>
                   <p className="w-100">
-                    Grazie per aver scelto agriturismo Rixoris. Inviateci un
-                    messaggio per qualsiasi dubbio riguardante i nostri servizi.
-                    La ricontatteremo al più presto possibile. Se dopo 24 ore
-                    non ha ancora ricevuto risposta, chiamate telefonicamente al
-                    numero elencato qui sotto. Normalmente rispondiamo più
-                    velocemente ai messaggi inviati tramite WhatsApp.
+                  Grazie per aver scelto Agriturismo Rixoris! Se hai domande riguardanti i nostri servizi, inviaci un messaggio e ti 
+                  risponderemo al più presto. Se non ricevi una risposta entro 24 ore, puoi anche chiamarci al numero elencato di seguito. 
+                  Di solito rispondiamo più velocemente ai messaggi inviati via WhatsApp.
                   </p>
                   <ul className="contatto-info">
                     <li className="mb-2">

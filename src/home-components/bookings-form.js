@@ -47,7 +47,7 @@ export default function BookingsForm({ id }) {
         {({ handleSubmit, handleChange, values, touched, errors }) => (
           <Form id={id}>
             <div className="mb-5">
-              <span className="decoro-small decoro">Effetua</span>
+              <span className="decoro-small decoro">Effettua</span>
               <h2 className="titolo-small titolo">Una Prenotazione</h2>
               <div className="d-flex justify-content-center">
                 <div className="spoon-line"></div>{" "}
@@ -60,9 +60,8 @@ export default function BookingsForm({ id }) {
                 <div className="spoon-line"></div>
               </div>
               <p className="m-auto">
-                Grazie per aver scelto agriturismo Rioxoris. La preghiamo di
-                compilare la tabella sottostante per prenotazioni. Dopo la sua
-                prenotazione, La ricontatteremo al piu presto per una conferma.
+                Grazie per aver scelto l' agriturismo Rioxoris. Per prenotazioni, la preghiamo di compilare la tabella sottostante. La ricontatteremo al più
+                presto per confermare. 
               </p>
             </div>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
