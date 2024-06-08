@@ -88,7 +88,6 @@ export default function ContactForm({ id }) {
                 >
                   <FormLabel>Inserisci il tuo nome</FormLabel>
                   <Form.Control
-                    id="name"
                     type="text"
                     name="name"
                     value={values.name}
@@ -100,7 +99,7 @@ export default function ContactForm({ id }) {
 
                   <FormLabel>Inserisci la tua email</FormLabel>
                   <Form.Control
-                    id="email"
+                   
                     type="email"
                     placeholder="name@example.com"
                     name="email"
@@ -112,8 +111,8 @@ export default function ContactForm({ id }) {
 
                   <FormLabel>Inserisci il soggetto del messaggio</FormLabel>
                   <Form.Control
-                    id="soggetto"
-                    type="soggetto"
+                   
+                    type="text"
                     placeholder="pranzo con amici"
                     name="subject"
                     value={values.subject}
@@ -128,7 +127,7 @@ export default function ContactForm({ id }) {
                     controlId="exampleForm.ControlTextarea1"
                   >
                     <Form.Control
-                      id="textarea"
+                     
                       as="textarea"
                       type="text"
                       value={values.textarea}

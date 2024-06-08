@@ -73,6 +73,7 @@ export default function BookingsForm({ id }) {
           number: "",
           email: "",
           selected: "",
+          textarea: ""
         }}
       >
         {({ handleChange, values, errors }) => (
@@ -168,11 +169,11 @@ export default function BookingsForm({ id }) {
                     className="mb-3"
                   >
                     <option>Scegli tipo di prenotazione</option>
-                    <option value="1">Cena</option>
-                    <option value="2">Pranzo</option>
-                    <option value="3">Pensione Completa</option>
-                    <option value="4">Mezza Pensione</option>
-                    <option value="5">Bed & Breakfast</option>
+                    <option value="Cena">Cena</option>
+                    <option value="Pranzo">Pranzo</option>
+                    <option value="Pensione Completa">Pensione Completa</option>
+                    <option value="Mezza Pensione">Mezza Pensione</option>
+                    <option value="Bed & Breakfast">Bed & Breakfast</option>
                   </Form.Select>
                 </Col>
               </Row>
@@ -183,7 +184,7 @@ export default function BookingsForm({ id }) {
                   className="mb-4"
                   controlId="exampleForm.ControlTextarea1"
                 >
-                  <Form.Control as="textarea" rows={3} className="p-5" />
+                  <Form.Control as="textarea" rows={3} className="p-5" type="text" name="textarea"/>
                 </Form.Group>
                 <Button
                   type="submit"
