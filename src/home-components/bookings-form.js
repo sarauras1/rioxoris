@@ -161,7 +161,6 @@ export default function BookingsForm({ id }) {
                 <Col md={6}>
                   <Form.Select
                     name="selected"
-                    multiple
                     value={values.selected}
                     onChange={handleChange}
                     isInvalid={!!errors.name}
