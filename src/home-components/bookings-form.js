@@ -77,7 +77,7 @@ export default function BookingsForm({ id }) {
       >
         {({ handleChange, values, errors }) => (
           <Form id={id} name="booking" method="post" data-netlify="true">
-             <input type="hidden" name="form-name" value="booking" />
+          <input type="hidden" name="form-name" value="booking" />
             <div className="mb-5">
               <span className="decoro-small decoro">Effettua</span>
               <h2 className="titolo-small titolo">Una Prenotazione</h2>
@@ -160,6 +160,7 @@ export default function BookingsForm({ id }) {
                 <Col md={6}>
                   <Form.Select
                     name="selected"
+                    multiple
                     value={values.selected}
                     onChange={handleChange}
                     isInvalid={!!errors.name}
