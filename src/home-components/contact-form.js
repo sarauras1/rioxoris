@@ -13,7 +13,7 @@ import {
 
 export default function ContactForm({ id }) {
   const schema = yup.object().shape({
-    nome: yup.string().required("devi inserire il tuo nome e cognome"),
+    name: yup.string().required("devi inserire il tuo nome e cognome"),
     email: yup.string().required("inserisci il tuo contatto email"),
     subject: yup.string().required("inserisci il  soggetto del messaggio"),
     textarea: yup.string().required("inserisci il tuo messaggio"),
@@ -32,24 +32,40 @@ export default function ContactForm({ id }) {
       <Formik
         validationSchema={schema}
         onSubmit={(values, { setSubmitting }) => {
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", values }),
-          })
-            .then(() => alert("Success!"), setSubmitting(false))
-            .catch((error) => alert(error), setSubmitting(false));
-          alert(values);
+          schema
+            .validate(values, { abortEarly: false }) // Validate using Yup schema
+            .then(() => {
+              // Validation succeeded, proceed with form submission
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", values }),
+              })
+                .then(() => {
+                  alert("Success!");
+                  setSubmitting(false);
+                })
+                .catch((error) => {
+                  alert(error);
+                  setSubmitting(false);
+                });
+            })
+            .catch((validationErrors) => {
+              // Handle validation errors (e.g., display them to the user)
+              console.error("Validation errors:", validationErrors);
+              setSubmitting(false);
+            });
         }}
         initialValues={{
-          nome: "",
+          name: "",
           email: "",
           subject: "",
           textarea: "",
         }}
       >
         {({ handleChange, values, errors }) => (
-          <Form id={id} method="post">
+          <Form id={id} method="post" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="mb-5 text-center">
               <span className="decoro-small decoro">Per Qualsiasi Dubbio</span>
               <h2 className="titolo-small titolo">Contattaci</h2>
@@ -73,7 +89,7 @@ export default function ContactForm({ id }) {
                   <FormLabel>Inserisci il tuo nome</FormLabel>
                   <Form.Control
                     type="text"
-                    name="nome"
+                    name="name"
                     value={values.name}
                     onChange={handleChange}
                     isInvalid={!!errors.name}

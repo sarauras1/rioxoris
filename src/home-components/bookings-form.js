@@ -21,7 +21,7 @@ const StyledContainer = styled(Container)`
 
 export default function BookingsForm({ id }) {
   const schema = yup.object().shape({
-    nome: yup.string().required("devi inserire il tuo nome e cognome"),
+    name: yup.string().required("devi inserire il tuo nome e cognome"),
     tel: yup.number().required("inserisci il tuo contatto telefonico"),
     ospiti: yup.number().required("inserisci il numero di ospiti"),
     email: yup.string().required("inserisci il tuo contatto email"),
@@ -42,26 +42,42 @@ export default function BookingsForm({ id }) {
     <StyledContainer fluid>
       <Formik
         validationSchema={schema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true)
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...values }),
-          })
-          .then(() => alert("Success!"), setSubmitting(false))
-          .catch((error) => alert(error));
+        onSubmit={(values, { setSubmitting }) => {
+          schema
+            .validate(values, { abortEarly: false }) // Validate using Yup schema
+            .then(() => {
+              // Validation succeeded, proceed with form submission
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", values }),
+              })
+                .then(() => {
+                  alert("Success!");
+                  setSubmitting(false);
+                })
+                .catch((error) => {
+                  alert(error);
+                  setSubmitting(false);
+                });
+            })
+            .catch((validationErrors) => {
+              // Handle validation errors (e.g., display them to the user)
+              console.error("Validation errors:", validationErrors);
+              setSubmitting(false);
+            });
         }}
         initialValues={{
-          nome: "",
+          name: "",
           tel: "",
-          ospiti: "",
+          number: "",
           email: "",
           selected: "",
         }}
       >
         {({ handleChange, values, errors }) => (
-          <Form id={id}>
+          <Form id={id} name="booking" method="post" data-netlify="true">
+             <input type="hidden" name="form-name" value="booking" />
             <div className="mb-5">
               <span className="decoro-small decoro">Effettua</span>
               <h2 className="titolo-small titolo">Una Prenotazione</h2>
@@ -86,7 +102,7 @@ export default function BookingsForm({ id }) {
                 <Col md={6}>
                   <Form.Control
                     type="text"
-                    name="nome"
+                    name="name"
                     value={values.name}
                     onChange={handleChange}
                     isInvalid={!!errors.name}
@@ -101,7 +117,7 @@ export default function BookingsForm({ id }) {
                     name="tel"
                     value={values.tel}
                     onChange={handleChange}
-                    isInvalid={!!errors.tel}
+                    isInvalid={!!errors.name}
                     className="mb-3"
                   />
                 </Col>
@@ -111,10 +127,10 @@ export default function BookingsForm({ id }) {
                   <Form.Control
                     type="number"
                     placeholder="Numero ospiti"
-                    name="ospiti"
+                    name="number"
                     value={values.ospiti}
                     onChange={handleChange}
-                    isInvalid={!!errors.ospiti}
+                    isInvalid={!!errors.name}
                     className="mb-3"
                   />
                 </Col>
@@ -125,7 +141,7 @@ export default function BookingsForm({ id }) {
                     name="email"
                     value={values.email}
                     onChange={handleChange}
-                    isInvalid={!!errors.email}
+                    isInvalid={!!errors.name}
                     className="mb-3"
                   />
                 </Col>
@@ -137,7 +153,7 @@ export default function BookingsForm({ id }) {
                     name="date"
                     value={values.date}
                     onChange={handleChange}
-                    isInvalid={!!errors.date}
+                    isInvalid={!!errors.name}
                     className="mb-3"
                   />
                 </Col>
@@ -146,7 +162,7 @@ export default function BookingsForm({ id }) {
                     name="selected"
                     value={values.selected}
                     onChange={handleChange}
-                    isInvalid={!!errors.selected}
+                    isInvalid={!!errors.name}
                     aria-label="Select service"
                     className="mb-3"
                   >
@@ -154,8 +170,8 @@ export default function BookingsForm({ id }) {
                     <option value="1">Cena</option>
                     <option value="2">Pranzo</option>
                     <option value="3">Pensione Completa</option>
-                    <option value="3">Mezza Pensione</option>
-                    <option value="3">Bed & Breakfast</option>
+                    <option value="4">Mezza Pensione</option>
+                    <option value="5">Bed & Breakfast</option>
                   </Form.Select>
                 </Col>
               </Row>
