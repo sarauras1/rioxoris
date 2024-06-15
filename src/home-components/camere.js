@@ -36,6 +36,7 @@ export default function CarouselCamere({ id }) {
             {camere.map((image, index) => (
               <Carousel.Item key={index} interval={500}>
                 <Image
+                  loading='lazy'
                   fluid
                   src={image.camere}
                   alt="Le camere dell' agriturismo Rioxoris"

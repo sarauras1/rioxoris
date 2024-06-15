@@ -71,7 +71,7 @@ export default function Header({ expanded }) {
           interval={1000}
           className="carousel-item-custom"
         >
-          <Image className="d-block w-100" src={image.src} alt={image.alt} />
+          <Image className="d-block w-100" src={image.src} alt={image.alt} loading='eager'/>
           {!expanded && (
             <Carousel.Caption
               style={{top: "25%"}}

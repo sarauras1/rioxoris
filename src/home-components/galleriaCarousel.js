@@ -7,7 +7,7 @@ export default function GalleriaCarousel({Images}){
     {Images.map((image, index) => (
       <Carousel.Item key={(index)} interval={1000} className='carousel-galleria'>
         
-        <Image  className="d-block w-100" src={image} alt={"rioxoris"}/>
+        <Image  className="d-block w-100" src={image} alt={"rioxoris"} loading='lazy'/>
     
       </Carousel.Item>
     ))}

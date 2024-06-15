@@ -35,7 +35,7 @@ export default function About({id}) {
           </p>
         </Col>
         <Col lg={6}>
-          <img className="d-block w-100" src="./Images/about/_DSC6022.jpg" alt="About Agriturismo Rioxoris" />
+          <img loading="eager" className="d-block w-100" src="./Images/about/_DSC6022.jpg" alt="About Agriturismo Rioxoris" />
         </Col>
       </Row>
     </Container>

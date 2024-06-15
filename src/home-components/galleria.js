@@ -68,6 +68,7 @@ export default function Gallery({ id }) {
                   >
                     <StyledOverlay>
                       <Image
+                        loading='lazy'
                         className="mb-3 image-hover gallery-images"
                         src={filteredImages[imageIndex]}
                         fluid
